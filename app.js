@@ -21,10 +21,16 @@ const fifteen = inventors.filter(
 );
 console.log(fifteen);
 
-// // Array.prototype.map()
-// // 2. Map the array of the inventors into a new array containing objects with just the first and last names as properties
-// // Hint:  Return a new object literal from the callback (don't mutate the object being passed in to map)
+// Array.prototype.map()
+// 2. Map the array of the inventors into a new array containing objects with just the first and last names as properties
+// Hint:  Return a new object literal from the callback (don't mutate the object being passed in to map)
 
+const firstLastNames = inventors.map(({ first, last }) => ({
+  first: first,
+  last: last,
+}));
+
+console.log(firstLastNames);
 // // Array.prototype.sort()
 // // 3. Sort the inventors by birth date (year property), in ascending order
 
