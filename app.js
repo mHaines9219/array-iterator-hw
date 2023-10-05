@@ -132,13 +132,17 @@ console.log(dataRedux);
 // 7. Count the number of instances for each of the data items. The reduce should return an object where the keys are 'car', 'truck', etc. and the values are the count.
 // Hint: Since you want to return an object, be sure to pass an empty {} for the initial value of the "accumulator".
 
-// const devs = [
-//   { name: 'Wes', year: 1988 },
-//   { name: 'Kait', year: 1986 },
-//   { name: 'Irv', year: 1970 },
-//   { name: 'Lux', year: 2015 }
-// ];
-
+const devs = [
+  { name: "Wes", year: 1988 },
+  { name: "Kait", year: 1986 },
+  { name: "Irv", year: 1970 },
+  { name: "Lux", year: 2015 },
+];
+const currentYear = 2023;
+devs.forEach((dev) => (dev.age = currentYear - dev.year));
+console.log(devs);
+const isNineteen = devs.some((dev) => dev.age >= 19);
+console.log(isNineteen);
 // Array.prototype.some()
 // 8. Check if at least one person is 19 or older?
 // Hint: To get today's year, use the getFullYear method of new Date(), i.e., new Date().getFullYear()
