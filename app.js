@@ -49,31 +49,88 @@ const sumAges = inventorsYears.reduce((acc, num) => acc + num, 0);
 console.log(sumAges);
 
 const people = [
-  'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry',
-  'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul',
-  'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David',
-  'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana',
-  'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar',
-  'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric',
-  'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell',
-  'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph',
-  'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank',
-  'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony',
-  'Blake, William'
+  "Becker, Carl",
+  "Beckett, Samuel",
+  "Beddoes, Mick",
+  "Beecher, Henry",
+  "Beethoven, Ludwig",
+  "Begin, Menachem",
+  "Belloc, Hilaire",
+  "Bellow, Saul",
+  "Benchley, Robert",
+  "Benenson, Peter",
+  "Ben-Gurion, David",
+  "Benjamin, Walter",
+  "Benn, Tony",
+  "Bennington, Chester",
+  "Benson, Leana",
+  "Bent, Silas",
+  "Bentsen, Lloyd",
+  "Berger, Ric",
+  "Bergman, Ingmar",
+  "Berio, Luciano",
+  "Berle, Milton",
+  "Berlin, Irving",
+  "Berne, Eric",
+  "Bernhard, Sandra",
+  "Berra, Yogi",
+  "Berry, Halle",
+  "Berry, Wendell",
+  "Bethea, Erin",
+  "Bevan, Aneurin",
+  "Bevel, Ken",
+  "Biden, Joseph",
+  "Bierce, Ambrose",
+  "Biko, Steve",
+  "Billings, Josh",
+  "Biondo, Frank",
+  "Birrell, Augustine",
+  "Black, Elk",
+  "Blair, Robert",
+  "Blair, Tony",
+  "Blake, William",
 ];
 
-  // Array.prototype.map()
-  // 6. Map the people array such that the new array consists of strings with the names formatted as "First Last", e.g., "Becker, Carl" should be mapped to "Carl Becker".
-  // Hint: As a start, consider using the String.prototype.split method to "split" the string using ', ' as the separator
+// Array.prototype.map()
+// 6. Map the people array such that the new array consists of strings with the names formatted as "First Last", e.g., "Becker, Carl" should be mapped to "Carl Becker".
 
-// const data = [
-//   'car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van',
-//   'bike', 'walk', 'car', 'van', 'car', 'truck'
-// ];
+peopleNames = people.map((name) => {
+  const [lastName, firstName] = name.split(", ");
+  return `${firstName} ${lastName}`;
+});
+console.log(peopleNames);
+// Hint: As a start, consider using the String.prototype.split method to "split" the string using ', ' as the separator
 
-// // Array.prototype.reduce()
-// // 7. Count the number of instances for each of the data items. The reduce should return an object where the keys are 'car', 'truck', etc. and the values are the count.
-// // Hint: Since you want to return an object, be sure to pass an empty {} for the initial value of the "accumulator".
+const data = [
+  "car",
+  "car",
+  "truck",
+  "truck",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "bike",
+  "walk",
+  "car",
+  "van",
+  "car",
+  "truck",
+];
+
+const dataRedux = data.reduce((acc, num) => {
+  if (acc[num]) {
+    acc[num] += 1;
+  } else {
+    acc[num] = 1;
+  }
+  return acc;
+}, {});
+console.log(dataRedux);
+
+// Array.prototype.reduce()
+// 7. Count the number of instances for each of the data items. The reduce should return an object where the keys are 'car', 'truck', etc. and the values are the count.
+// Hint: Since you want to return an object, be sure to pass an empty {} for the initial value of the "accumulator".
 
 // const devs = [
 //   { name: 'Wes', year: 1988 },
@@ -82,12 +139,12 @@ const people = [
 //   { name: 'Lux', year: 2015 }
 // ];
 
-// // Array.prototype.some()
-// // 8. Check if at least one person is 19 or older?
-// // Hint: To get today's year, use the getFullYear method of new Date(), i.e., new Date().getFullYear()
+// Array.prototype.some()
+// 8. Check if at least one person is 19 or older?
+// Hint: To get today's year, use the getFullYear method of new Date(), i.e., new Date().getFullYear()
 
-// // Array.prototype.every()
-// // 9. Check if everyone is 19 or older?
+// Array.prototype.every()
+// 9. Check if everyone is 19 or older?
 
 // const comments = [
 //   { text: 'Love this!', id: 523423 },
@@ -97,11 +154,11 @@ const people = [
 //   { text: 'Nice Nice Nice!', id: 542328 }
 // ];
 
-// // Array.prototype.find()
-// // 10. Find the comment with the id of 823423
+// Array.prototype.find()
+// 10. Find the comment with the id of 823423
 
-// // Array.prototype.findIndex()
-// // 11. Find the index of the comment with an id of 123523
+// Array.prototype.findIndex()
+// 11. Find the index of the comment with an id of 123523
 
 // Verify console.log Output
 // [ { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
