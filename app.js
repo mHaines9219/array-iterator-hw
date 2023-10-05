@@ -29,34 +29,42 @@ const firstLastNames = inventors.map(({ first, last }) => ({
   first: first,
   last: last,
 }));
-
 console.log(firstLastNames);
-// // Array.prototype.sort()
-// // 3. Sort the inventors by birth date (year property), in ascending order
 
-// // Array.prototype.find()
-// // 4. Find the inventor object with the first name of 'Ada'
+// console.log(firstLastNames);
+// Array.prototype.sort()
+// 3. Sort the inventors by birth date (year property), in ascending order
+const sortedInventors = inventors.sort((a, b) => a.year - b.year);
+console.log(sortedInventors);
 
-// // Array.prototype.reduce()
-// // 5. How many years did all the inventors live?
+// Array.prototype.find()
+// 4. Find the inventor object with the first name of 'Ada'
+const ada = inventors.find((i) => i.first === "Ada");
+console.log(ada);
+// Array.prototype.reduce()
+// 5. How many years did all the inventors live?
 
-// const people = [
-//   'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry',
-//   'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul',
-//   'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David',
-//   'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana',
-//   'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar',
-//   'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric',
-//   'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell',
-//   'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph',
-//   'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank',
-//   'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony',
-//   'Blake, William'
-// ];
+const inventorsYears = inventors.map((age) => age.passed - age.year);
+const sumAges = inventorsYears.reduce((acc, num) => acc + num, 0);
+console.log(sumAges);
 
-// // Array.prototype.map()
-// // 6. Map the people array such that the new array consists of strings with the names formatted as "First Last", e.g., "Becker, Carl" should be mapped to "Carl Becker".
-// // Hint: As a start, consider using the String.prototype.split method to "split" the string using ', ' as the separator
+const people = [
+  'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry',
+  'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul',
+  'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David',
+  'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana',
+  'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar',
+  'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric',
+  'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell',
+  'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph',
+  'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank',
+  'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony',
+  'Blake, William'
+];
+
+  // Array.prototype.map()
+  // 6. Map the people array such that the new array consists of strings with the names formatted as "First Last", e.g., "Becker, Carl" should be mapped to "Carl Becker".
+  // Hint: As a start, consider using the String.prototype.split method to "split" the string using ', ' as the separator
 
 // const data = [
 //   'car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van',
