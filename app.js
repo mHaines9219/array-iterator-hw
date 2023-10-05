@@ -146,21 +146,28 @@ console.log(isNineteen);
 // Array.prototype.some()
 // 8. Check if at least one person is 19 or older?
 // Hint: To get today's year, use the getFullYear method of new Date(), i.e., new Date().getFullYear()
+const newNineteen = devs.map((dev) => (dev.age = currentYear - dev.year));
 
+const isEveryoneNineteen = newNineteen.every((age) => age >= 19);
+console.log(isEveryoneNineteen);
 // Array.prototype.every()
 // 9. Check if everyone is 19 or older?
 
-// const comments = [
-//   { text: 'Love this!', id: 523423 },
-//   { text: 'Super good', id: 823423 },
-//   { text: 'You are the best', id: 2039842 },
-//   { text: 'Ramen is my fav food ever', id: 123523 },
-//   { text: 'Nice Nice Nice!', id: 542328 }
-// ];
+const comments = [
+  { text: "Love this!", id: 523423 },
+  { text: "Super good", id: 823423 },
+  { text: "You are the best", id: 2039842 },
+  { text: "Ramen is my fav food ever", id: 123523 },
+  { text: "Nice Nice Nice!", id: 542328 },
+];
 
+const idSearch = comments.find((comment) => comment.id === 823423);
+console.log(idSearch);
 // Array.prototype.find()
 // 10. Find the comment with the id of 823423
 
+const idIdx = comments.findIndex((comment) => comment.id === 123523);
+console.log(idIdx);
 // Array.prototype.findIndex()
 // 11. Find the index of the comment with an id of 123523
 
